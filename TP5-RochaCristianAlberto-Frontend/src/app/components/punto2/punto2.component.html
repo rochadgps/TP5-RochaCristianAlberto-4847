@@ -1,0 +1,56 @@
+<section class="col-md-8 d-none d-sm-block" style="float: left;">
+    <br>
+    <button class="btn btn-dark col-12" (click)="list()">Mostrar Lista de Codigos Internacionales</button>
+    <ol class="list-group"  *ngFor="let c of currencies">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{c.code}}</div>
+            {{c.name}}
+          </div>
+        </li>
+      </ol>
+</section>
+<br>
+<aside class="formulario col-md-4 col-sm-12 col-12" style="float: left;">
+   
+    <h3 class="title-form">Conversor de Divisas</h3>
+    <form>
+        
+        <div class="form-group"> <!-- Street 1 -->
+            <label for="street1_id" class="control-label">Cantidad</label>
+            <input type="number" class="form-control"  name="street1" placeholder="Cantidad" [(ngModel)]="moneda">
+        </div>
+        <div class="form-group"> <!-- State Button -->
+            <label for="state_id" class="control-label">De:</label>
+            <select class="form-control" id="id" title="de"  name="de" [(ngModel)]="de">
+                <option value="USD">USD Dolares EEUU</option>
+                <option value="EUR">EUR Euros ESP</option>
+                <option value="ARS">ARS Peso Argentino</option>
+            </select>
+        </div>
+        <div class="form-group"> <!-- State Button -->
+            <label for="state_id" class="control-label">A:</label>
+            <select class="form-control" id="state_id" name="a" [(ngModel)]="a">
+                <option value="USD">USD Dolares EEUU</option>
+                <option value="EUR">EUR Euros ESP</option>
+                <option value="ARS">ARS Peso Argentino</option>
+            </select>
+        </div>
+        <div class="mb-3 col-sm-12">
+            <label id="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Ingrese email" [(ngModel)]="emailCliente"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group"> <!-- Street 1 -->
+            <label for="street1_id" class="control-label" readonly="readonly"></label>
+            <input type="text" class="form-control" id="street1_id" name="street1" placeholder="{{conversion | currency:'$'}}" readonly>
+
+        </div>
+
+
+        <div class="form-group boton"> <!-- Submit Button -->
+            <button type="submit" class="btn" routerLink="punto2-list" style="background-color: #f3b02f;" (click)="convertir(a,de,moneda)">Convertir</button>
+        </div>
+    </form>
+</aside>
