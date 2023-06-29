@@ -1,7 +1,7 @@
 const Transaccion = require('../models/transaccion');
 const transaccionCtrl = {}
 
-transaccionCtrl.getTransaccion = async (req, res) => { //se define una funcion asincrona
+transaccionCtrl.getTransaccion = async (req, res) => { 
     var transacciones = await Transaccion.find();
     res.json(transacciones);
 }
@@ -13,7 +13,6 @@ transaccionCtrl.createTransaccion = async (req, res) => {
     const tasaConversion = Number(req.body.tasaConversion);
     const cantidadDestino = cantidadOrigen * tasaConversion;
 
-    // Asigna la cantidad destino a la transacción
     transaccion.cantidadOrigen = cantidadDestino;
     transaccion.cantidadDestino = cantidadOrigen;
     try {

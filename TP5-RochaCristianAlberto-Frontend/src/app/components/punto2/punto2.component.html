@@ -16,11 +16,11 @@
     <h3 class="title-form">Conversor de Divisas</h3>
     <form>
         
-        <div class="form-group"> <!-- Street 1 -->
+        <div class="form-group">
             <label for="street1_id" class="control-label">Cantidad</label>
             <input type="number" class="form-control"  name="street1" placeholder="Cantidad" [(ngModel)]="moneda">
         </div>
-        <div class="form-group"> <!-- State Button -->
+        <div class="form-group"> 
             <label for="state_id" class="control-label">De:</label>
             <select class="form-control" id="id" title="de"  name="de" [(ngModel)]="de">
                 <option value="USD">USD Dolares EEUU</option>
@@ -28,7 +28,7 @@
                 <option value="ARS">ARS Peso Argentino</option>
             </select>
         </div>
-        <div class="form-group"> <!-- State Button -->
+        <div class="form-group">
             <label for="state_id" class="control-label">A:</label>
             <select class="form-control" id="state_id" name="a" [(ngModel)]="a">
                 <option value="USD">USD Dolares EEUU</option>
@@ -42,15 +42,15 @@
                 [ngModelOptions]="{standalone: true}">
         </div>
 
-        <div class="form-group"> <!-- Street 1 -->
+        <div class="form-group">
             <label for="street1_id" class="control-label" readonly="readonly"></label>
             <input type="text" class="form-control" id="street1_id" name="street1" placeholder="{{conversion | currency:'$'}}" readonly>
 
         </div>
 
 
-        <div class="form-group boton"> <!-- Submit Button -->
-            <button type="submit" class="btn" routerLink="punto2-list" style="background-color: #f3b02f;" (click)="convertir(a,de,moneda)">Convertir</button>
+        <div class="form-group boton"> 
+            <button type="submit" class="btn" style="background-color: #f3b02f;" (click)="convertir(a,de,moneda)">Convertir</button>
         </div>
     </form>
 </aside>
